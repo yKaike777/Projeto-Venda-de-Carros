@@ -1,0 +1,4 @@
+> Adicionado um Banner
+> Adicionado um Campo de Pesquisa
+> Adicionado um Campo de Categorias
+> Links no Footer agora funcionam

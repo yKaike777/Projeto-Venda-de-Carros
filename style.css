@@ -1,86 +1,285 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: monospace;
 }
 
-body{
-    height: 100vh;
+body {
+    min-height: 100vh;
+    background-color: #ecedf2;
     position: relative;
+    overflow-x: hidden;
 }
 
-header{
+/*======================== CABEÇALHO ========================*/
+
+/* Cabeçalho fixo no topo*/
+header {
     display: flex;
     justify-content: space-between;
-    background-color: #622424;
-}
-
-footer{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 100%;
+    background-color: rgb(255, 63, 63);
+    position: fixed;
     width: 100%;
-    height: 10%;
-    gap: 10px;
-
-    align-items: center;
-    justify-content: center;
-    background: rgb(34, 35, 40);
-    color: #fff;
+    z-index: 2000;
 }
 
-ul{
-    list-style: none;   
+/* Logo alinhado à esquerda com margem esquerda */
+img#logo {
+    height: 50px;
+    align-self: center;
+    transform: translateX(50px);
 }
 
-ul li{
+/* Menu principal sem marcadores */
+ul {
+    list-style: none;
+}
+
+/* Cada item do menu como bloco em linha e com submenu relativo */
+ul li {
     display: inline-block;
     position: relative;
 }
 
-ul li a{
+/* Links do menu com estilo básico */
+ul li a {
     display: block;
     padding: 20px 25px;
     width: 160px;
     color: #fff;
-    text-decoration: none;
     text-align: center;
+    text-decoration: none;
     font-size: 20px;
     transition: 0.1s ease-in;
 }
 
-ul li ul.dropdown li{
+/* Itens do submenu em bloco */
+ul li ul.dropdown li {
     display: block;
 }
 
-ul li ul.dropdown{
+/* Submenu oculto por padrão */
+ul li ul.dropdown {
     width: 100%;
-    background: #622424;
+    background: rgb(255, 63, 63);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     position: absolute;
-    z-index: 1000;
     display: none;
+    z-index: 2100;
 }
 
-ul li a:hover{
-    background: #371616;
+/* Hover nos links muda o fundo */
+ul li a:hover {
+    background: rgb(169, 0, 0);
 }
 
-ul li:hover ul.dropdown{
+/* Exibe submenu ao passar o mouse */
+ul li:hover ul.dropdown {
     display: block;
 }
 
-i{
+/* Ícones giram ao passar o mouse */
+i {
     transition: 0.1s ease-in;
 }
-
-ul li:hover i{
+ul li:hover i {
     transform: rotate(180deg);
 }
 
-img#logo{
-    height: 50px;
-    align-self: center;
-    transform: translateX(50px);
+/*======================== MAIN ========================*/
+
+/* Área principal da página */
+main {
+    flex: 1;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#banner {
+    position: relative;
+}
+
+#campo-pesquisa {
+    position: absolute;
+    top: 570px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 40px 20px;
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Botão de busca estilizado */
+#campo-pesquisa button {
+    width: 250px;
+    padding: 20px 15px;
+    border: none;
+    border-radius: 15px;
+
+    background: rgb(255, 63, 63);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: 150ms ease-in;
+}
+
+/* Hover do botão de busca */
+#campo-pesquisa button:hover {
+    background: rgb(169, 0, 0);
+}
+
+/* Área de categorias (Carros, Motos) */
+#category {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+
+    position: absolute;
+    top: 20%;
+    left: 45px;
+}
+
+/* Estilo dos botões de categoria */
+#category span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: grey;
+    transition: 150ms ease-in;
+}
+
+/* Hover nos botões de categoria */
+#campo-pesquisa div span:hover {
+    cursor: pointer;
+    color: black;
+}
+
+/* Container de busca com input e ícone */
+#search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Estilo da caixa de input */
+#search div {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 10px;
+}
+
+/* Campo de input limpo */
+#search input {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Remove a borda azul ao focar */
+#search input:focus {
+    outline: none;
+}
+
+#categorias-carros{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 20px;
+    margin-bottom: 50px;
+    margin-left: 25%;
+    gap: 20px;
+    width: 100%;
+}
+
+#categorias-carros div{
+    display: flex;
+    gap: 20px;
+}
+
+#categorias-carros h3{
+    font-size: 2.5rem;
+    color: #70717e;
+}
+
+.card-categorias {
+    width: 200px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: end;
+
+    color: #fff;
+    transition: 0.1s ease-in;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.card-categorias:hover{
+    scale: 1.1;
+}
+
+.card-categorias img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.card-categorias span {
+    position: relative;
+    z-index: 1; 
+    color: white;
+    text-shadow: 1px 1px 4px black; 
+}
+
+
+/*======================== FOOTER ========================*/
+
+/* Rodapé fixado ao final da página */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 10%;
+    gap: 10px;
+    padding: 20px;
+
+    background: rgb(34, 35, 40);
+    color: #fff;
 }
