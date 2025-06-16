@@ -14,7 +14,6 @@ body {
 
 /*======================== CABEÇALHO ========================*/
 
-/* Cabeçalho fixo no topo*/
 header {
     display: flex;
     justify-content: space-between;
@@ -24,25 +23,21 @@ header {
     z-index: 2000;
 }
 
-/* Logo alinhado à esquerda com margem esquerda */
 img#logo {
     height: 50px;
     align-self: center;
     transform: translateX(50px);
 }
 
-/* Menu principal sem marcadores */
 ul {
     list-style: none;
 }
 
-/* Cada item do menu como bloco em linha e com submenu relativo */
 ul li {
     display: inline-block;
     position: relative;
 }
 
-/* Links do menu com estilo básico */
 ul li a {
     display: block;
     padding: 20px 25px;
@@ -54,12 +49,10 @@ ul li a {
     transition: 0.1s ease-in;
 }
 
-/* Itens do submenu em bloco */
 ul li ul.dropdown li {
     display: block;
 }
 
-/* Submenu oculto por padrão */
 ul li ul.dropdown {
     width: 100%;
     background: rgb(255, 63, 63);
@@ -69,17 +62,14 @@ ul li ul.dropdown {
     z-index: 2100;
 }
 
-/* Hover nos links muda o fundo */
 ul li a:hover {
     background: rgb(169, 0, 0);
 }
 
-/* Exibe submenu ao passar o mouse */
 ul li:hover ul.dropdown {
     display: block;
 }
 
-/* Ícones giram ao passar o mouse */
 i {
     transition: 0.1s ease-in;
 }
@@ -89,7 +79,6 @@ ul li:hover i {
 
 /*======================== MAIN ========================*/
 
-/* Área principal da página */
 main {
     flex: 1;
     height: 100%;
@@ -124,7 +113,6 @@ main {
 }
 
 
-/* Botão de busca estilizado */
 #campo-pesquisa button {
     width: 250px;
     padding: 20px 15px;
@@ -141,12 +129,10 @@ main {
     transition: 150ms ease-in;
 }
 
-/* Hover do botão de busca */
 #campo-pesquisa button:hover {
     background: rgb(169, 0, 0);
 }
 
-/* Área de categorias (Carros, Motos) */
 #category {
     width: 100%;
     display: flex;
@@ -158,7 +144,6 @@ main {
     left: 45px;
 }
 
-/* Estilo dos botões de categoria */
 #category span {
     font-size: 1.5rem;
     font-weight: bold;
@@ -166,13 +151,11 @@ main {
     transition: 150ms ease-in;
 }
 
-/* Hover nos botões de categoria */
 #campo-pesquisa div span:hover {
     cursor: pointer;
     color: black;
 }
 
-/* Container de busca com input e ícone */
 #search {
     width: 100%;
     display: flex;
@@ -180,7 +163,6 @@ main {
     gap: 50px;
 }
 
-/* Estilo da caixa de input */
 #search div {
     width: 70%;
     display: flex;
@@ -192,37 +174,46 @@ main {
     border-radius: 10px;
 }
 
-/* Campo de input limpo */
 #search input {
     width: 100%;
     height: 100%;
     border: none;
 }
 
-/* Remove a borda azul ao focar */
 #search input:focus {
     outline: none;
 }
 
-#categorias-carros{
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
+#categorias-carros {
+    width: 100%;
     padding: 20px;
     margin-bottom: 50px;
-    margin-left: 25%;
-    gap: 20px;
-    width: 100%;
-}
 
-#categorias-carros div{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
 }
 
+
+#categorias-carros > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+h3{
+    font-size: 2.5rem;
+    color: #70717e;
+    text-align: center;
+}
 #categorias-carros h3{
     font-size: 2.5rem;
     color: #70717e;
+    padding-left: 22%;
 }
 
 .card-categorias {
@@ -263,6 +254,35 @@ main {
     z-index: 1; 
     color: white;
     text-shadow: 1px 1px 4px black; 
+}
+
+#carros{
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+    margin: 30px 0px;
+    gap: 20px;
+    width: 80%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.card-carros {
+    height: 250px;
+    width: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    position: relative;
+}
+
+.card-carros img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
 }
 
 
