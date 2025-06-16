@@ -272,10 +272,39 @@ h3{
     border-radius: 20px;
     overflow: hidden;
     text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
     background: #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     position: relative;
+    transition: 150ms ease-in;
+}
+.card-carros:hover{
+    scale: 1.1;
+    background: #e1e1e1;
+}
+
+.card-carros h2{
+    margin-top: 15px;
+}
+
+.card-carros button{
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    
+    background: rgb(101, 101, 234);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 150ms ease-in;
+}
+
+.card-carros button:hover{
+    scale: 1.1;
+    background: rgb(63, 63, 160);
 }
 
 .card-carros img {
