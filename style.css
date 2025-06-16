@@ -10,12 +10,13 @@ body {
     background-color: #ecedf2;
     position: relative;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
-
-/*======================== CABEÇALHO ========================*/
 
 header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     background-color: rgb(255, 63, 63);
     position: fixed;
@@ -26,7 +27,7 @@ header {
 img#logo {
     height: 50px;
     align-self: center;
-    transform: translateX(50px);
+    transform: translateX(20px);
 }
 
 ul {
@@ -73,20 +74,17 @@ ul li:hover ul.dropdown {
 i {
     transition: 0.1s ease-in;
 }
+
 ul li:hover i {
     transform: rotate(180deg);
 }
 
-/*======================== MAIN ========================*/
-
 main {
     flex: 1;
-    height: 100%;
-    min-height: 400px;
+    min-height: 250px;
     display: flex;
     justify-content: center;
 }
-
 
 #banner {
     position: relative;
@@ -101,7 +99,6 @@ main {
     width: 80%;
     padding: 40px 20px;
     min-height: 300px;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,19 +109,16 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-
 #campo-pesquisa button {
     width: 250px;
     padding: 20px 15px;
     border: none;
     border-radius: 15px;
-
     background: rgb(255, 63, 63);
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
-
     cursor: pointer;
     transition: 150ms ease-in;
 }
@@ -138,7 +132,6 @@ main {
     display: flex;
     justify-content: start;
     gap: 20px;
-
     position: absolute;
     top: 20%;
     left: 45px;
@@ -160,16 +153,16 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 #search div {
-    width: 70%;
+    flex: 1 1 300px;
     display: flex;
     align-items: center;
     padding: 10px;
     gap: 10px;
-
     border: 2px solid rgb(200, 200, 200);
     border-radius: 10px;
 }
@@ -188,32 +181,24 @@ main {
     width: 100%;
     padding: 20px;
     margin-bottom: 50px;
-
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
 }
-
 
 #categorias-carros > div {
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 20px;
 }
 
-h3{
+h3 {
     font-size: 2.5rem;
     color: #70717e;
     text-align: center;
-}
-#categorias-carros h3{
-    font-size: 2.5rem;
-    color: #70717e;
-    padding-left: 22%;
 }
 
 .card-categorias {
@@ -223,19 +208,18 @@ h3{
     border-radius: 15px;
     position: relative;
     overflow: hidden;
-
     display: flex;
     align-items: end;
-
     color: #fff;
     transition: 0.1s ease-in;
     font-size: 1.5rem;
     font-weight: bold;
     z-index: 1;
+    cursor: pointer;
 }
 
-.card-categorias:hover{
-    scale: 1.1;
+.card-categorias:hover {
+    scale: 1.05;
 }
 
 .card-categorias img {
@@ -251,50 +235,55 @@ h3{
 
 .card-categorias span {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
     color: white;
-    text-shadow: 1px 1px 4px black; 
+    text-shadow: 1px 1px 4px black;
 }
 
-#carros{
+#carros {
     display: grid;
     justify-items: center;
-    justify-self: center;
-    margin: 30px 0px;
+    margin: 30px auto;
     gap: 20px;
-    width: 80%;
+    width: 90%;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
 }
+
+#carros h2{
+    padding: 5px;
+}
+
 .card-carros {
     height: 250px;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     border-radius: 20px;
     overflow: hidden;
     text-align: center;
-    align-items: center;
     display: flex;
     flex-direction: column;
     background: #fff;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    position: relative;
     transition: 150ms ease-in;
 }
-.card-carros:hover{
-    scale: 1.1;
+
+.card-carros:hover {
+    scale: 1.05;
     background: #e1e1e1;
 }
 
-.card-carros h2{
-    margin-top: 15px;
+.card-carros img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
 }
 
-.card-carros button{
-    margin: 5px;
-    padding: 5px 10px;
+.card-carros button {
+    margin: 10px;
+    padding: 10px 15px;
     border-radius: 5px;
     border: none;
-    
+    align-self: center;
     background: rgb(101, 101, 234);
     color: #fff;
     font-weight: bold;
@@ -302,33 +291,64 @@ h3{
     transition: 150ms ease-in;
 }
 
-.card-carros button:hover{
+.card-carros button:hover {
     scale: 1.1;
     background: rgb(63, 63, 160);
 }
 
-.card-carros img {
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
-    display: block;
-}
-
-
-/*======================== FOOTER ========================*/
-
-/* Rodapé fixado ao final da página */
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 100%;
-    height: 10%;
     gap: 10px;
     padding: 20px;
-
     background: rgb(34, 35, 40);
     color: #fff;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 780px) {
+    #campo-pesquisa {
+        top: 400px;
+        padding: 20px 10px;
+    }
+
+    #category {
+        flex-wrap: wrap;
+        justify-content: center;
+        left: auto;
+        position: static;
+    }
+
+    ul li a {
+        width: auto;
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #banner img {
+        height: auto;
+    }
+
+    #campo-pesquisa {
+        width: 95%;
+        gap: 20px;
+    }
+
+    .card-categorias {
+        width: 150px;
+        height: 200px;
+    }
+
+    .card-carros {
+        max-width: 160px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
 }
