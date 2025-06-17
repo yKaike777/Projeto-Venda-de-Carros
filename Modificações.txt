@@ -1,2 +1,2 @@
-> Site + Responsivo
-> Cards dos Carros 
+> Melhorias na caixa de pesquisa
+> Agora da pra pesquisar, filtrando marca, modelo, tipo e ano

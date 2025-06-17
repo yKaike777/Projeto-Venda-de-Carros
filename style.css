@@ -109,7 +109,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-#campo-pesquisa button {
+#ver-ofertas{
     width: 250px;
     padding: 20px 15px;
     border: none;
@@ -123,7 +123,40 @@ main {
     transition: 150ms ease-in;
 }
 
-#campo-pesquisa button:hover {
+.estado{
+    width: 150px;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 25px;
+    background: #edecf2;
+    color: #6a6977;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease-in;
+}
+
+.estado.selecionado{
+    background: #ffd3dc;
+    color: #e22446;
+}
+
+.estado.selecionado:hover{
+    background: #ffd3dc;
+    color: #e22446;
+}
+
+#botoes{
+    align-self: flex-start;
+}
+
+.estado:hover{
+    background: #d0cfda;
+    color: #6a6977;
+}
+
+#ver-ofertas:hover {
     background: rgb(169, 0, 0);
 }
 
@@ -133,8 +166,8 @@ main {
     justify-content: start;
     gap: 20px;
     position: absolute;
-    top: 20%;
-    left: 45px;
+    top: 25px;
+    left: 40px;
 }
 
 #category span {
@@ -144,7 +177,11 @@ main {
     transition: 150ms ease-in;
 }
 
-#campo-pesquisa div span:hover {
+#category span.selecionado {
+  color: black;
+}
+
+#category span:hover {
     cursor: pointer;
     color: black;
 }
@@ -155,6 +192,7 @@ main {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 25px;
 }
 
 #search div {
@@ -216,6 +254,12 @@ h3 {
     font-weight: bold;
     z-index: 1;
     cursor: pointer;
+}
+
+.card-categorias.selecionado {
+  scale: 1.1;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: 0.2s ease-in-out;
 }
 
 .card-categorias:hover {
@@ -327,6 +371,10 @@ footer {
         font-size: 16px;
         padding: 10px;
     }
+
+    #carros {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
@@ -350,5 +398,9 @@ footer {
 
     h3 {
         font-size: 1.5rem;
+    }
+
+    #carros {
+        grid-template-columns: 1fr;
     }
 }
