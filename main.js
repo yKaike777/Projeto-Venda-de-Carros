@@ -3,19 +3,6 @@ const cardCategoria = document.querySelectorAll('.card-categorias');
 const spans = document.querySelectorAll('#category span');
 const botoes = document.querySelectorAll('#botoes .estado');
 
-botoes.forEach(botao => {
-  botao.addEventListener('click', () => {
-    botoes.forEach(b => b.classList.remove('selecionado'));
-    botao.classList.add('selecionado');
-  })
-})
-spans.forEach(span => {
-  span.addEventListener('click', () => {
-    spans.forEach(s => s.classList.remove('selecionado'));     
-    span.classList.add('selecionado');   
-  });
-});
-
 class Carro {
   constructor(nome, marca, ano, preco, tipo) {
     this.nome = nome;
@@ -36,9 +23,27 @@ const carros = [
   new Carro("Rs3", "Audi", 2018, 400000, "hatch"),
   new Carro("Rampage", "RAM", 2024, 224900, "picape"),
   new Carro("Sentra", "Nissan", 2023, 131590, "sedan"),
-  new Carro("Taycan", "Porsche", 2022, 478800, "eletrico")
+  new Carro("Taycan", "Porsche", 2022, 478800, "eletrico"),
+  new Carro("Mobi", "Fiat", 2020, 40699, "hatch"),
+  new Carro("Civic", "Honda", 2021, 135900, "sedan"),
+  new Carro("Master", "Renault", 2025, 263650, "suv"),
+  new Carro("Corolla", "Toyota", 2025, 168890, "sedan"),
+  new Carro("Kwid", "Renault", 2025, 77240, "suv")
 ];
 
+botoes.forEach(botao => {
+  botao.addEventListener('click', () => {
+    botoes.forEach(b => b.classList.remove('selecionado'));
+    botao.classList.add('selecionado');
+  })
+})
+
+spans.forEach(span => {
+  span.addEventListener('click', () => {
+    spans.forEach(s => s.classList.remove('selecionado'));     
+    span.classList.add('selecionado');   
+  });
+});
 
 carros.forEach((carro, index) => {
   const nomeEl = document.getElementById(`nome-carro${index + 1}`);
