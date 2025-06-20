@@ -298,7 +298,6 @@ h3 {
 }
 
 .card-carros {
-    height: 250px;
     width: 100%;
     max-width: 200px;
     border-radius: 20px;
@@ -338,6 +337,15 @@ h3 {
 .card-carros button:hover {
     scale: 1.1;
     background: rgb(63, 63, 160);
+}
+
+
+.detalhes {
+    display: none;
+    text-align: left;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #444;
 }
 
 footer {

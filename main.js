@@ -101,3 +101,24 @@ cardCategoria.forEach(card => {
     }
   });
 });
+
+function mostrarMaisDetalhes(id) {
+    const todosCards = document.querySelectorAll('.card-carros');
+
+    todosCards.forEach((card, index) => {
+        const detalhes = card.querySelector('.detalhes');
+        const iconeSeta = card.querySelector('i.fa-caret-down');
+
+        // Se for o card clicado
+        if (index + 1 === id) {
+            const estaAberto = detalhes.style.display === 'block';
+            detalhes.style.display = estaAberto ? 'none' : 'block';
+            iconeSeta.style.transform = estaAberto ? 'rotate(0deg)' : 'rotate(180deg)';
+        } else {
+            // Fecha todos os outros
+            detalhes.style.display = 'none';
+            iconeSeta.style.transform = 'rotate(0deg)';
+        }
+    });
+}
+

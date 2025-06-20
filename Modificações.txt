@@ -1,2 +1,2 @@
-> Melhorias na caixa de pesquisa
-> Agora da pra pesquisar, filtrando marca, modelo, tipo e ano
+> Botão "Mais detalhes" agora funciona
+
