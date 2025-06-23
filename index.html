@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>DriveUp</title>
+</head>
+<body>
+    <header>
+            <img src="img/logo.png" alt="" id="logo">
+            <span>DriveUp</span>
+        <ul>
+            <li><a href="#">Início</a> </li>
+            <li>
+                <a href="#">Comprar <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#categorias-carros">Carros</a></li>
+                    <li><a href="#">Motos</a></li>
+                    <li><a href="#">Ônibus</a></li>
+                    <li><a href="#">Caminhões</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </header>
+
+    <div id="banner">
+        <a href="#"><img src="img/aaaaaa.jpg" alt="" width="100%" height="600px"></a>
+    </div>
+
+    <main>
+        <div id="campo-pesquisa">
+            <div id="category">
+                <span>Carros</span>
+                <span>Motos</span>
+                <span>Ônibus</span>
+                <span>Caminhões</span>
+            </div>
+
+            <div id="search">
+                <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input placeholder="Digite a marca ou modelo do carro" id="input-pesquisa"></input>
+                </div>
+
+                <button onclick="location.href='#carros'" id="ver-ofertas">Ver Ofertas</button>
+            </div>
+
+            <div id="botoes">
+                <button class="estado selecionado">Tudo</button>
+                <button class="estado">Usado</button>
+                <button class="estado">Semi novo</button>
+                <button class="estado">Novo</button>
+            </div>
+        </div>
+    </main>
+
+
+    <div id="categorias-carros">
+        <h3>Categorias</h3>
+        <div>
+            <div class="card-categorias" id="card-eletrico">
+                <img src="img/eletrico-categoria.jpg" alt="">
+                <span>Carros Elétricos</span>
+            </div>
+
+            <div class="card-categorias" id="card-hatch">
+                <img src="img/hatch-categoria.jpg" alt="">
+                <span>Hatches</span>
+            </div>
+
+            <div class="card-categorias" id="card-picape">
+                <img src="img/picape-categoria.jpg" alt="">    
+                <span>Picapes</span>
+            </div>
+
+            <div class="card-categorias" id="card-sedan">
+                <img src="img/sedan-categoria.jpg" alt="">
+                <span>Sedans</span>    
+            </div>
+
+            <div class="card-categorias" id="card-suv">
+                <img src="img/suv-categoria.jpg" alt="">
+                <span>SUVs</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="todos-carros">
+        <h3>Todos Carros</h3>
+
+        <div id="carros">
+            <div class="card-carros" data-tipo="carros elétricos" id="card-carro1">
+                <img src="img/Volvo-c40.png" alt="">
+                <h2 id="nome-carro1">Volvo C40</h2>
+                <p><span id="preco-carro1">R$350.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro1">2023</span></p>
+                    <p>Estado: <span id="estado-carro1">Seminovo</span></p>
+                    <p>KM: <span id="km-carro1">23000</span></p>
+                    <p>Localização: <span id="local-carro1">Alvorada, RS</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(1)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="hatches" id="card-carro2">
+                <img src="img/mini-cooper.png" alt="">
+                <h2 id="nome-carro2">Mini Cooper</h2>
+                <p><span id="preco-carro2">R$200.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro2">2022</span></p>
+                    <p>Estado: <span id="estado-carro2">Usado</span></p>
+                    <p>KM: <span id="km-carro2">15000</span></p>
+                    <p>Localização: <span id="local-carro2">Porto Alegre, RS</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(2)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="suvs" id="card-carro3">
+                <img src="img/audi-Q3.png" alt="">
+                <h2 id="nome-carro3">Audi Q3</h2>
+                <p><span id="preco-carro3">R$230.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro3">2021</span></p>
+                    <p>Estado: <span id="estado-carro3">Novo</span></p>
+                    <p>KM: <span id="km-carro3">0</span></p>
+                    <p>Localização: <span id="local-carro3">Curitiba, PR</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(3)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="picapes" id="card-carro4">
+                <img src="img/chevrolet.S10.png" alt="">
+                <h2 id="nome-carro4">Chevrolet S10</h2>
+                <p><span id="preco-carro4">R$180.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro4">2020</span></p>
+                    <p>Estado: <span id="estado-carro4">Usado</span></p>
+                    <p>KM: <span id="km-carro4">22000</span></p>
+                    <p>Localização: <span id="local-carro4">Canoas, RS</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(4)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="sedans" id="card-carro5">
+                <img src="img/bmw-320i.png" alt="">
+                <h2 id="nome-carro5">BMW 320i</h2>
+                <p><span id="preco-carro5">R$260.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro5">2023</span></p>
+                    <p>Estado: <span id="estado-carro5">Novo</span></p>
+                    <p>KM: <span id="km-carro5">10</span></p>
+                    <p>Localização: <span id="local-carro5">São Paulo, SP</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(5)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+
+            <div class="card-carros" data-tipo="carros elétricos" id="card-carro6">
+                <img src="img/bmw-ix2.png" alt="">
+                <h2 id="nome-carro6">BMW iX2</h2>
+                <p><span id="preco-carro6">R$370.000,00</span></p>
+
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro6">2023</span></p>
+                    <p>Estado: <span id="estado-carro6">Novo</span></p>
+                    <p>KM: <span id="km-carro6">0</span></p>
+                    <p>Localização: <span id="local-carro6">Florianópolis, SC</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(6)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="hatches" id="card-carro7">
+                <img src="img/Audi-RS3.png" alt="">
+                <h2 id="nome-carro7">Audi RS3</h2>
+                <p><span id="preco-carro7">R$320.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro7">2022</span></p>
+                    <p>Estado: <span id="estado-carro7">Seminovo</span></p>
+                    <p>KM: <span id="km-carro7">8000</span></p>
+                    <p>Localização: <span id="local-carro7">Joinville, SC</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(7)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="picapes" id="card-carro8">
+                <img src="img/ram-rampage.png" alt="">
+                <h2 id="nome-carro8">RAM Rampage</h2>
+                <p><span id="preco-carro8">R$250.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro8">2023</span></p>
+                    <p>Estado: <span id="estado-carro8">Novo</span></p>
+                    <p>KM: <span id="km-carro8">0</span></p>
+                    <p>Localização: <span id="local-carro8">Belo Horizonte, MG</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(8)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="sedans" id="card-carro9">
+                <img src="img/nissan-sentra.png" alt="">
+                <h2 id="nome-carro9">Nissan Sentra</h2>
+                <p><span id="preco-carro9">R$150.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro9">2022</span></p>
+                    <p>Estado: <span id="estado-carro9">Usado</span></p>
+                    <p>KM: <span id="km-carro9">12000</span></p>
+                    <p>Localização: <span id="local-carro9">Campinas, SP</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(9)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="carros elétricos" id="card-carro10">
+                <img src="img/porsche-taycan.png" alt="">
+                <h2 id="nome-carro10">Porsche Taycan</h2>
+                <p><span id="preco-carro10">R$980.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro10">2024</span></p>
+                    <p>Estado: <span id="estado-carro10">Novo</span></p>
+                    <p>KM: <span id="km-carro10">0</span></p>
+                    <p>Localização: <span id="local-carro10">São Paulo, SP</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(10)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+
+            <div class="card-carros" data-tipo="hatches" id="card-carro11">
+                <img src="img/fiat-mobi.png" alt="">
+                <h2 id="nome-carro11">Fiat Mobi</h2>
+                <p><span id="preco-carro11">R$65.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro11">2021</span></p>
+                    <p>Estado: <span id="estado-carro11">Usado</span></p>
+                    <p>KM: <span id="km-carro11">28000</span></p>
+                    <p>Localização: <span id="local-carro11">Fortaleza, CE</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(11)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="sedans" id="card-carro12">
+                <img src="img/honda-civic.png" alt="">
+                <h2 id="nome-carro12">Honda Civic</h2>
+                <p><span id="preco-carro12">R$180.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro12">2023</span></p>
+                    <p>Estado: <span id="estado-carro12">Seminovo</span></p>
+                    <p>KM: <span id="km-carro12">5000</span></p>
+                    <p>Localização: <span id="local-carro12">Curitiba, PR</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(12)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="suvs" id="card-carro13">
+                <img src="img/renault-master.png" alt="">
+                <h2 id="nome-carro13">Renault Master</h2>
+                <p><span id="preco-carro13">R$210.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro13">2022</span></p>
+                    <p>Estado: <span id="estado-carro13">Usado</span></p>
+                    <p>KM: <span id="km-carro13">30000</span></p>
+                    <p>Localização: <span id="local-carro13">Porto Alegre, RS</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(13)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="sedans" id="card-carro14">
+                <img src="img/toyota-corolla.png" alt="">
+                <h2 id="nome-carro14">Toyota Corolla</h2>
+                <p><span id="preco-carro14">R$145.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro14">2021</span></p>
+                    <p>Estado: <span id="estado-carro14">Seminovo</span></p>
+                    <p>KM: <span id="km-carro14">17000</span></p>
+                    <p>Localização: <span id="local-carro14">São José dos Campos, SP</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(14)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="card-carros" data-tipo="suvs" id="card-carro15">
+                <img src="img/renault-kwid.png" alt="">
+                <h2 id="nome-carro15">Renault Kwid</h2>
+                <p><span id="preco-carro15">R$80.000,00</span></p>
+            
+                <div class="detalhes">
+                    <p>Ano: <span id="ano-carro15">2022</span></p>
+                    <p>Estado: <span id="estado-carro15">Usado</span></p>
+                    <p>KM: <span id="km-carro15">15000</span></p>
+                    <p>Localização: <span id="local-carro15">Recife, PE</span></p>
+                </div>
+            
+                <button onclick="mostrarMaisDetalhes(15)">Mais Detalhes <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div>
+        <a href="https://github.com/yKaike777" style="color: white;"><i class="fa-brands fa-github"></i></a>
+        <a href="https://youtu.be/dQw4w9WgXcQ?si=MCtxXP4Cb1Tc2FAe" style="color: white;"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/gktavaresb_?igsh=MTBkbDJ2ZjR3czV4NA==" style="color: white;"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        <span>© Todos os direitos reservados.</span>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html> 

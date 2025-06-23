@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #ecedf2;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgb(198, 62, 62), rgb(224, 59, 59));
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+}
+
+img#logo {
+    height: 50px;
+    align-self: center;
+    transform: translateX(20px);
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 20px 25px;
+    width: 160px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.1s ease-in;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: rgb(255, 63, 63);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: none;
+    z-index: 2100;
+}
+
+ul li a:hover {
+    background: rgb(169, 0, 0);
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+i {
+    transition: 0.1s ease-in;
+}
+
+ul li:hover i {
+    transform: rotate(180deg);
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+main div{
+    width: 40%;
+    height: 80%;
+    background: linear-gradient(to bottom right, #ff5252, #e53935);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    position: relative;
+}
+
+#kaike-container, #pietro-container{
+    display: flex;
+    flex-direction: column;
+    transition: 0.1s ease-in;
+}
+
+#kaike-container:hover, #pietro-container:hover{
+    background: linear-gradient(to bottom right, #e04848, #be2e2c);
+}   
+i:hover{
+    transform: scale(1.1);
+    color: #ffffffaa;
+    transition: transform 0.3s ease;
+}
+
+h1{
+    position: absolute;
+    top: 5%;
+    color: #fff;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    padding: 20px;
+    background: rgb(34, 35, 40);
+    color: #fff;
+}
